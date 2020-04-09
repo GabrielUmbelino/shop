@@ -1,22 +1,15 @@
 import React from 'react';
 import './App.css';
-
+import { AppRoutes } from './core/routes';
+import { Products } from './containers/product/Products';
 function App() {
+  console.log('app');
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className='App'>
+      <header className='App-header'>
+        <h2>Królik</h2>
       </header>
+      <Products />
     </div>
   );
 }
