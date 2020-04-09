@@ -3,11 +3,10 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import './ProductItem.css';
+
 export const ProductItem = (props) => {
   const onOrder = () => {
-    // this.history.pushState(this.props.product.id, 'Product Details', 'product');
-
-    console.log('aasdasd');
+    props.onOrder(props.product.id);
   };
 
   return (

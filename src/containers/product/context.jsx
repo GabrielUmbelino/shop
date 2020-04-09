@@ -11,7 +11,6 @@ export class ProductContextProvider extends React.Component {
   };
 
   render() {
-    console.log('context');
     return <ProductContext.Provider value={this.state}>{this.props.children}</ProductContext.Provider>;
   }
 }

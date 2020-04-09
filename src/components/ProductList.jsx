@@ -5,5 +5,5 @@ export const ProductList = (props) => {
   if (!props.products || !props.products.length) {
     return null;
   }
-  return props.products.map((product) => <ProductItem product={product} key={product.id} />);
+  return props.products.map((product) => <ProductItem product={product} key={product.id} onOrder={props.onOrder} />);
 };
