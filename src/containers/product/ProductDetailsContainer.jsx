@@ -1,6 +1,7 @@
 import React from 'react';
 import { ProductContext } from './context';
-export class ProductDetails extends React.Component {
+import { ProductDetails } from '../../components/productDetails/ProductDetails'
+export class ProductDetailsContainer extends React.Component {
   static contextType = ProductContext;
 
   state = {
@@ -21,14 +22,13 @@ export class ProductDetails extends React.Component {
     if (!product) {
       return this.history.pushState('/');
     }
-
     this.setState({ product });
   }
 
   render() {
     return (
       <div className='container'>
-        <div className='row'>{this.state.product.name}</div>
+        <ProductDetails product={this.state.product}></ProductDetails>
       </div>
     );
   }

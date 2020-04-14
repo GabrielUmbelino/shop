@@ -3,10 +3,11 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import './ProductItem.css';
-
+import { useHistory } from 'react-router-dom';
 export const ProductItem = (props) => {
+  const history = useHistory();
   const onOrder = () => {
-    props.onOrder(props.product.id);
+    history.push(`/product/${props.product.id}`,);
   };
 
   return (
