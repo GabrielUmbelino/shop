@@ -1,12 +1,12 @@
 import React from 'react';
 import { ProductRoutes } from '../../containers/product';
-import { BrowserRouter, Switch } from 'react-router-dom';
+import { CheckoutRoutes } from '../../containers/checkout';
+import { BrowserRouter } from 'react-router-dom';
 export const AppRoutes = () => {
   return (
     <BrowserRouter>
-      <Switch>
-        <ProductRoutes />;
-      </Switch>
+          <ProductRoutes />
+          <CheckoutRoutes />
     </BrowserRouter>
   );
 };
