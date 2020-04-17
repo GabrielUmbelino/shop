@@ -1,15 +1,16 @@
 import React from 'react';
 import './App.css';
 import { AppRoutes } from './core/routes';
+import { Header } from './components/Header';
+import { CartContextProvider } from './core/context/CartContext';
 
 function App() {
-  console.log('app');
   return (
     <div className='App'>
-      <header className='App-header'>
-        <h2>Królik</h2>
-      </header>
-      <AppRoutes />
+      <CartContextProvider>
+        <Header />
+        <AppRoutes />
+      </CartContextProvider>
     </div>
   );
 }
