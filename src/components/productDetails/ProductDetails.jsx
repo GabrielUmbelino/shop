@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Col from 'react-bootstrap/col';
 import Row from 'react-bootstrap/row';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { CartContext } from '../../containers/checkout/context/Cart';
+import { useHistory } from 'react-router-dom';
 
 export const ProductDetails = (props) => {
   const { product } = props;
+  const checkoutContext = useContext(CartContext);
+  const history = useHistory();
+
+  const onAddCart = () => {
+    checkoutContext.addProductToCart(product);
+    history.push('/cart');
+  };
 
   if (!product) {
     return <div>carregando produto...</div>;
@@ -26,8 +35,16 @@ export const ProductDetails = (props) => {
             <Card.Text>{product.description}</Card.Text>
           </Card.Body>
           <Card.Footer>
-            <Button variant='primary'>Calculate Frete</Button>
-            <Button variant='success'>Add To Cart</Button>
+            <Row>
+              <Col>
+                <Button variant='primary'>Calculate Frete</Button>
+              </Col>
+              <Col>
+                <Button variant='success' onClick={onAddCart}>
+                  Buy
+                </Button>
+              </Col>
+            </Row>
           </Card.Footer>
         </Card>
       </Col>
