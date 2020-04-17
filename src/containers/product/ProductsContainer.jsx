@@ -9,14 +9,6 @@ export class ProductsContainer extends React.Component {
     loading: false,
   };
 
-  componentDidMount() {
- 
-
-    // setTimeout(() => {
-    //   this.context.setProducts(products);
-    // }, 500);
-  }
-
   render() {
     return (
       <Container>

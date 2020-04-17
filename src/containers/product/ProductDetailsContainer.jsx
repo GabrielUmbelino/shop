@@ -19,9 +19,11 @@ export class ProductDetailsContainer extends React.Component {
     }
 
     const product = this.context.getProduct(this.props.match.params.id);
+
     if (!product) {
       return this.history.pushState('/');
     }
+
     this.setState({ product });
   }
 
