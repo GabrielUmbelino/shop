@@ -4,7 +4,7 @@ export class DeliveryContainer extends React.Component {
   render() {
     return <Container>
       <Row>
-        <Col>Payment</Col>
+        <Col>Delivery</Col>
       </Row>
     </Container>;
   }

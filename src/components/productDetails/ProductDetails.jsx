@@ -3,16 +3,16 @@ import Col from 'react-bootstrap/col';
 import Row from 'react-bootstrap/row';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { CartContext } from '../../containers/checkout/context/Cart';
+import { CartContext } from '../../core/context/CartContext';
 import { useHistory } from 'react-router-dom';
 
 export const ProductDetails = (props) => {
   const { product } = props;
-  const checkoutContext = useContext(CartContext);
+  const cartContext = useContext(CartContext);
   const history = useHistory();
 
   const onAddCart = () => {
-    checkoutContext.addProductToCart(product);
+    cartContext.addProductToCart(product);
     history.push('/cart');
   };
 
@@ -36,9 +36,6 @@ export const ProductDetails = (props) => {
           </Card.Body>
           <Card.Footer>
             <Row>
-              <Col>
-                <Button variant='primary'>Calculate Frete</Button>
-              </Col>
               <Col>
                 <Button variant='success' onClick={onAddCart}>
                   Buy

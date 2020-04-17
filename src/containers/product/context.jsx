@@ -1,5 +1,4 @@
 import React from 'react';
-import { CartContextProvider } from '../checkout/context/Cart';
 export const ProductContext = React.createContext({});
 export class ProductContextProvider extends React.Component {
   state = {
@@ -36,11 +35,9 @@ export class ProductContextProvider extends React.Component {
 
   render() {
     return (
-      <CartContextProvider>
-        <ProductContext.Provider value={this.state}>
-          {this.props.children}
-        </ProductContext.Provider>
-      </CartContextProvider>
+      <ProductContext.Provider value={this.state}>
+        {this.props.children}
+      </ProductContext.Provider>
     );
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProductContext } from './context';
-import { ProductDetails } from '../../components/productDetails/ProductDetails'
+import { ProductDetails } from '../../components/productDetails/ProductDetails';
 export class ProductDetailsContainer extends React.Component {
   static contextType = ProductContext;
 
@@ -15,13 +15,13 @@ export class ProductDetailsContainer extends React.Component {
 
   componentDidMount() {
     if (!this.props.match.params.id) {
-      return this.history.pushState('/');
+      return this.props.history.push('/');
     }
 
     const product = this.context.getProduct(this.props.match.params.id);
 
     if (!product) {
-      return this.history.pushState('/');
+      return this.props.history.push('/');
     }
 
     this.setState({ product });
